@@ -1,46 +1,53 @@
 
 
 #include<stdio.h>
+
 ///////////////////////////////////////////////////////////////
 //
-// Function Name : Number
-// Description   : Accept number from user and display message
-//                 depending on range.
+// Function Name : Display
+// Description   : Accept number from user and display pattern 
+//                 of * and # alternately.
 // Input         : Integer
-// Output        : Displays "Small", "Medium", or "Large"
-// Author        : Wani Pradnya
-// Date          : 10/11/2025
+// Output        : Displays pattern 
+// Author        : Pradnya Wani
+// Date          : 9/11/2025
 //
 ///////////////////////////////////////////////////////////////
 
-void Number(int iNo)
+void Display(int iNo)
 {
+    int iCnt = 0;
 
-    if( iNo < 50)
+    if(iNo < 0)
     {
-        printf("Small\n");
-    }
-    else if(iNo >= 50 && iNo <= 100)
-    {
-        printf("Medium\n");
-    }
-    else
-    {
-        printf("Large");
+        iNo = -iNo; 
     }
 
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
+    {
+        printf("* ");
+    }
+    for(iCnt = 0; iCnt <= iNo; iCnt++)
+    {
+        printf("# ");
+    }
 
+
+    printf("\n");
+    
 }
+
 int main()
 {
     int iValue = 0;
 
-    printf("Enter Number :");
-    scanf("%d",&iValue);
+    printf("Enter number: ");
+    scanf("%d", &iValue);
 
-    Number(iValue);
+    Display(iValue);
 
     return 0;
-
 }
-//Time Complexity: O(1)
+
+
+// Time Complexity: O(n)
